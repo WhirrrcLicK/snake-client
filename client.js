@@ -10,12 +10,22 @@ const connect = function () {
     console.log(data);
   })
   conn.on("connect", () => {
+    console.log("Successfully connected to game server.")
+  })
+  conn.on("connect", () => {
+  conn.write("Move: up")
+  })
+  conn.on("connect", () => {
+    conn.write('Name: KEH'
+    )
   })
   // interpret incoming data as text
-  conn.setEncoding("utf8");
+  
+    conn.setEncoding("utf8");
+    
+    return conn;
+  };
 
-  return conn;
-};
 console.log("Connecting ...");
 connect();
 
@@ -35,9 +45,6 @@ module.exports = {
 //   conn.on('data', (data) => {
 //     console.log(data);
 //   })
-//   conn.on("connect", () => {
-//     conn.write("Name: KEH");
-//   });
 
 //   // interpret incoming data as text
 //   conn.setEncoding("utf8");
