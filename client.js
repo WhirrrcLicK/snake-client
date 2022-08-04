@@ -3,35 +3,48 @@ const net = require("net");
 // establishes a connection with the game server
 const connect = function () {
   const conn = net.createConnection({
-    host: '165.227.47.243',
+    host: '192.168.1.73',
     port: 50541
   });
-
   conn.on('data', (data) => {
     console.log(data);
   })
   conn.on("connect", () => {
-    conn.write("Name: KEH");
-  });
-
+  })
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
   return conn;
 };
-
-console.log("Badger badger badger badger...");
+console.log("Connecting ...");
 connect();
 
-module.exports = connect
+module.exports = {
+  connect 
+}
 
 
 
 
 
+// const net = require("net");
+// const { IP, PORT } = require("./constants");
+// let connection;
+// // establishes a connection with the game server
 
+//   conn.on('data', (data) => {
+//     console.log(data);
+//   })
+//   conn.on("connect", () => {
+//     conn.write("Name: KEH");
+//   });
 
+//   // interpret incoming data as text
+//   conn.setEncoding("utf8");
 
+//   return conn;;
+
+// module.exports = connect
 
 // //client
 // const net = require('net');
